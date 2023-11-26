@@ -1,0 +1,39 @@
+Exécuter dans la Jvm du navigateur :
+
+Environnement de développement : 
+-------------------------------
+
+Compilation (Javac.exe | .sh ) => (ByteCode)  => Interprétation ( Java.exe | .sh ) (jvm)
+
+
+Source code (Main.java)  => Compilation (Java compiler) => byteCode (Main.Class) => Interprétation (JVM + load class) => Run
+
+
+Java Compiler (Javac) => convert the java file to byteCode intermediate machine independent 
+
+Java ByteCode  => 
+
+
+----------------------------------------------------------------------------------------
+
+* Interpreter : Jvm :
+---------------------
+1- Class Loader     => (1). Chargement  => (2). Linking ( Verification + Preparation + Resolution ) => (3). Initialiation (Exception) 
+2- Execution Engine => (1). Interpreter => (2). JIT Compiler + (3). Garbage Collection ]
+
+*Jre : 
+-------
+* C'est l'implémentation de jvm
+* Jre contient un ensemble de bibliothèques que jvm utilise au moment de l'exécution
+* J'existe physiquement
+
+
+
+
+Code java [ Test.Java ] => 
+
+
+
+Source code ( test.java ) => 
+
+

@@ -1,0 +1,75 @@
+Les Cookies : 
+------------
+
+1) Créatoion d'un cookie et envoi au client :
+---------------------------------------------
+
+* setcookie("Name" , "Valeur" , "expires" ,"path")
+  - name     : Le nom d’un cookie est soumis aux mêmes règles que les noms des variables.
+  - expires : Si aucune valeur n’est passée en argument, le cookie expirera à la fin de la session = (0) 
+  - path    : Le chemin sur le serveur sur lequel le cookie sera disponible. 
+
+Les valeur par default : 
+------------------------
+
+* Name   : ("") . Vide.
+* Valeur : ("") . Vide.
+* expire : (0) . Le cookie expirera à la fin de la session du navigateur.
+* Path   : Le chemin relatif à la page actuelle où le cookie est défini. 
+	localhost/Test_PHP, le chemin par défaut sera /Test_PHP.
+* Domaine : Le domaine par défaut est généralement le domaine de l'URL courante.
+	http://localhost
+
+NB :  La setcookie()fonction doit apparaître AVANT la balise <html>.
+
+2) Récupérer la valeur d’un cookie :
+* Pour récupérer la valeur d’un cookie, nous allons utiliser la variable superglobale $_COOKIE.
+
+
+
+3) Modifier la valeur d’un cookie : 
+------------------------------------
+
+appeler à nouveau la fonction setcookie() en lui passant le nom du cookie 
+dont on souhaite changer la valeur et changer l’argument de type valeur.
+
+NB (Modification) :
+ 
+* Valeur , Expire : 
+  - vous n'avez pas besoin de créer un nouveau cookie distinct. 
+  - Le navigateur comprendra qu'il s'agit d'une mise à jour du cookie existant avec des valeurs modifiées.
+ 
+
+* Path , Domaine :
+  - le navigateur considérera cela comme la création d'un nouveau cookie distinct. 
+  - Le cookie précédent avec l'ancien chemin ne sera pas écrasé et restera inchangé.
+
+* Secure ou HttpOnly :
+- Pour modifier la propriété "Secure" ou "HttpOnly" d'un cookie existant, 
+   - vous devez créer un nouveau cookie avec les nouvelles propriétés.
+
+
+4) supprimer un cookie :
+------------------------
+* Si la nouvelle date est dans le passé, le navigateur supprimera le cookie, le considérant comme expiré.
+
+a) premier method :
+------------------
+* Appeler setcookie() en lui passant le nom du cookie qu’on souhaite supprimer.
+* Allons cette fois-ci définir une date d’expiration se situant dans le passé pour le cookie en question.
+time() - 3600;
+
+b) Deuxieme method : 
+-------------------
+* setcookie("nom_cookie")
+* utilisez la fonction setcookie() avec une seule argument, comme dans votre exemple setcookie("Test");, 
+  le cookie spécifié est supprimé du navigateur. 
+* valeur = deleted   et   expire = 0
+
+// Suppression de la valeur du tableau $_COOKIE
+  unset($_COOKIE['designPrefere']);
+
+5) Array : 
+----------
+
+

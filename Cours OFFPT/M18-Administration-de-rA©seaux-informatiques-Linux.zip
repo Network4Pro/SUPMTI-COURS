@@ -1,0 +1,4 @@
+
+Warning: fopen(/hermes/bosnacweb02/bosnacweb02cf/b1701/ipg.ouardifcb54809/ofppt1/wp-content/uploads/dlm_uploads/2015/07/M18-Administration-de-rÃ©seaux-informatiques-Linux.zip): failed to open stream: No such file or directory in /hermes/bosnacweb08/bosnacweb08ba/b1701/ipg.ouardifcb54809/ofppt1/wp-content/plugins/download-monitor/src/DownloadHandler.php on line 852
+
+Warning: Cannot modify header information - headers already sent by (output started at /hermes/bosnacweb08/bosnacweb08ba/b1701/ipg.ouardifcb54809/ofppt1/wp-content/plugins/download-monitor/src/DownloadHandler.php:852) in /hermes/bosnacweb08/bosnacweb08ba/b1701/ipg.ouardifcb54809/ofppt1/wp-content/plugins/download-monitor/src/DownloadHandler.php on line 668

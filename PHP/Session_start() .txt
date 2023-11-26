@@ -1,0 +1,79 @@
+* Session_start() :
+
+*Aprés debut le processus de gestion des session quelles les information doit mouteur php connaitre : 
+
+-  Démarrer du processus de gestion des sessions 
+
+- Processus de gestion des sessions  : 
+--------------------------------------------------------------------
+
+1)  Vérifie si le nom du cookie de session dans la requête correspond au nom de session spécifié.
+ 
+ * (Fonction : Session_name() ou defult : "PHPSESSID")
+         (Nom de session soit : session_name("XXX") ou "PHPSESSID" ) égal ( Nom de Cookie via requet de demande )
+
+1.1)  Cookie Valide : Vérifie si le contenu du cookie correspond à l'identifiant de session stocké dans le nom de fichier de session.
+                      (Contenu de cookie : $_Cookie[Sessio_name]) égal session_ID dans nom fichier : (/xampp/tmp/SESS_Session_ID)
+  
+	1.1.1)  L'identifiant de session correspondant est trouvé dans le nom de fichier de session,  
+   		 - les données de session sont chargées dans la superglobale $_SESSION. 
+		 - La session est reprise avec les données existantes.
+
+
+        1.1.2) False : (Reprendre de la session sans doonée ) : 
+        	       - Mode strict (Session_Strict_Mode = 1) :
+    		       - Une nouvelle session est démarrée avec un nouvel identifiant de session.
+		       - Toutes les variables de session seront initialisées et vides.
+
+  		       - Mode non strict (Session_Strict_Mode = 0) :
+    		       - Une session est reprise avec le même identifiant de session dans le cookie, mais sans aucune donnée de session. 
+		       - Un fichier de session vide est créé pour stocker les variables de session. (SESS_SESSION_ID)
+
+
+1.2)  Le cookie de session n'est pas valide ou n'existe pas dans la requête :
+		- une nouvelle session est démarrée en générant un nouvel identifiant de session unique. 
+		- Un fichier de session vide est créé pour cette nouvelle session.
+
+Les modifications apportées aux variables de session sont automatiquement enregistrées dans le fichier de session lors de la fin du script ou lorsque vous appelez explicitement session_write_close(). 
+
+- Doit mouteur PHP connaitre : session_save_path , session_name [session_id] de session. 
+ aprés chaque appel de session_start(). 
+
+
+* $_SESSION :
+
+
+
+* Session_ID("") : 
+ - Doit d'appeler avant session_start() sur toutes les pages utilisent le même nom de cookie de session.
+
+
+* Session_name("") :
+ - Doit d'appeler avant session_start() sur toutes les pages utilisent le même nom de cookie de session.
+
+* Session_save_path() :
+ - - Doit d'appeler avant session_start() sur toutes les pages utilisent le même nom de cookie de session
+
+
+* Session_create_ID() :
+
+
+* Session_status() :
+
+
+* Session_destroy() :
+
+
+* Session_unset() :
+
+
+* Session_regenerate_id() :
+
+
+* Session_get_cookie_params() :
+
+
+* Session_set_cookie_params() :
+
+
+ 

@@ -1,0 +1,32 @@
+$_SERVER : est une superglobale en PHP qui contient des informations sur le serveur et l'environnement d'exécution. 
+
+DOCUMENET_ROOT = c:/xampp/htdocs
+SERVER_NAME    = localhost
+SERVER_PORT    = 8000
+SCRIPT_NAME    = /Crud_PHP/index.php
+REQUEST_METHOD = GET
+
+
+------------------------------------------------------------
+
+Lorsqu'un fichier est téléchargé via un formulaire HTML avec la méthode POST et l'attribut enctype="multipart/form-data", les informations sur le fichier téléchargé sont disponibles dans le tableau $_FILES.
+
+$_FILES : pour récupérer les informations sur les fichiers téléchargés via un formulaire HTML de type <input type="file">.
+
+'name' : Le nom original du fichier tel qu'il était sur la machine cliente.
+'type' : Le type MIME du fichier tel que fourni par le navigateur du client.
+'size' : La taille du fichier en octets.
+'tmp_name' : Le chemin temporaire du fichier téléchargé sur le serveur.
+'error' : Le code d'erreur associé au téléchargement du fichier.
+
+
+---------------------------------------------------------------------
+
+* unlink('File_path') : utiliser cette fonction pour supprimer un fichier en spécifiant son chemin complet.
+
+* file_exists() : est utilisée pour vérifier si un fichier ou un répertoire existe sur le 
+système de fichiers. ( True / False ).
+
+* is_uploaded_file() : vérifie si un fichier a été téléchargé via HTTP POST. (True / False).
+
+-------------------------------------------------------
